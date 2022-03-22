@@ -1,0 +1,15 @@
+.tabClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
+     top: 3rem;
+     position: relative;
+}
+.loginCard{
+   border: 1px solid skyblue;
+   width: 500px !important;
+}
+mat-form-field{
+    width: 100% !important;
+}

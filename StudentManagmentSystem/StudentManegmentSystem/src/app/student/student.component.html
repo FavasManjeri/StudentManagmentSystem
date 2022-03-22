@@ -1,0 +1,33 @@
+
+<div style="text-align: center;">
+    <h2>STUDENT DETAILS</h2>
+    
+<button mat-raised-button color="primary" (click)="onCreate()">Create</button>
+<table class="table">
+    <thead>
+      <tr>
+       
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">PhoneNumber</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of studentArray$|async">
+        <td scop="row">{{item.name}}</td>
+        <td scop="row">{{item.age}}</td>
+        <td scop="row">{{item.address}}</td>
+        <td scop="row">{{item.email}}</td>
+        <td scop="row">{{item.phoneNumber}}</td>
+        <td>
+            <button class="btn btn-primary" (click)="navigatetoedit(item.id)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(item.id)">Delete</button>
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>

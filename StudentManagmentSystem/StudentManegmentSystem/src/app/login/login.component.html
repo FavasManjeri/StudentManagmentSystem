@@ -1,0 +1,28 @@
+
+<div class="tabClass">
+ <mat-card class="loginCard">
+     <h2 style="text-align: center;">Login</h2>
+    <form [formGroup]='loginForm' (ngSubmit)='onSubmit(loginForm)'>
+       
+            <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="userName" >
+                <mat-error *ngIf="AllControles?.['userName']?.errors?.['required']&&submited">UserName is Required</mat-error>
+               </mat-form-field>
+               <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="password" [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                <mat-error *ngIf="AllControles?.['password']?.errors?.['required']&&submited">Password is Required</mat-error>
+               </mat-form-field>
+               <div style="text-align: center;">
+                <button mat-raised-button color="primary" style="margin: 9px;">Login</button>
+                <button mat-raised-button color="accent" (click)="onSignup()">SignUp</button>
+               </div>
+               
+    </form>
+    
+  </mat-card>
+</div>      

@@ -1,0 +1,62 @@
+<h1 style="text-align: center;margin-top: 20px;">CREATE NEW USER</h1>
+<div class="tabClass">
+    <mat-card class="loginCard">
+        <form [formGroup]='signupForm' (ngSubmit)="onSumbit(signupForm)">
+            <mat-form-field appearance="outline">
+                <mat-label>UserName</mat-label>
+                <input matInput placeholder="Placeholder" formControlName="username" >
+                <mat-error *ngIf="AllControls?.['username']?.errors?.['required']&&submitted">UserName is Rquired</mat-error>
+                
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Placeholder"  formControlName="password" [type]="hide ? 'password' : 'text'">
+                    <mat-error *ngIf="AllControls?.['password']?.errors?.['required']&&submitted">Password is Rquired</mat-error>
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      </button>
+                </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Address</mat-label>
+                        <textarea matInput formControlName="address"></textarea>
+                        <mat-error *ngIf="AllControls?.['address']?.errors?.['required']&&submitted">Address is Rquired</mat-error>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>City</mat-label>
+                        <input matInput placeholder="Placeholder"  formControlName="city">
+                        <mat-error *ngIf="AllControls?.['city']?.errors?.['required']&&submitted">City is Rquired</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>State</mat-label>
+                            <input matInput placeholder="Placeholder"  formControlName="state">
+                            <mat-error *ngIf="AllControls?.['state']?.errors?.['required']&&submitted">State is Rquired</mat-error>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Country</mat-label>
+                                <input matInput placeholder="Placeholder"  formControlName="country">
+                                <mat-error *ngIf="AllControls?.['country']?.errors?.['required']&&submitted">Country is Rquired</mat-error>
+                                </mat-form-field>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>PostalCode</mat-label>
+                                    <input matInput placeholder="Placeholder"  formControlName="postalcode" type="number">
+                                    <mat-error *ngIf="AllControls?.['postalcode']?.errors?.['required']&&submitted">PostalCode is Rquired</mat-error>
+                                    </mat-form-field>
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Mobile Number</mat-label>
+                                        <input matInput placeholder="Placeholder" type="number" formControlName="phoneNumber">
+                                        <mat-error *ngIf="AllControls?.['phoneNumber']?.errors?.['required']&&submitted">Mobile Number is Rquired</mat-error>
+                                        <mat-error *ngIf="AllControls?.['phoneNumber']?.errors?.['pattern']&&submitted">Invalide Mobile Number</mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field appearance="outline">
+                                            <mat-label>Email</mat-label>
+                                            <input matInput placeholder="Placeholder"  formControlName="email">
+                                            <mat-error *ngIf="AllControls?.['email']?.errors?.['required']&&submitted">Email is Rquired</mat-error>
+                                            <mat-error *ngIf="AllControls?.['email']?.errors?.['email']&&submitted">Invalide Email</mat-error>
+                                            </mat-form-field>
+                                            <div style="text-align: center;">
+                                                <button mat-raised-button color="primary">Create</button>
+                                               </div>
+        </form>
+    </mat-card>
+</div>
+

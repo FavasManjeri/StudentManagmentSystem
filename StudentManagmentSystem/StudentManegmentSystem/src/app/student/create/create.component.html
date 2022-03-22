@@ -1,0 +1,42 @@
+
+<h1 style="text-align: center;margin-top: 20px;">ADD NEW STUDENT</h1>
+<div class="tabClass">
+    <mat-card class="loginCard">
+    <form [formGroup]="newStudent" (ngSubmit)="onSubmitted()">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Placeholder" formControlName="Name" >
+            <mat-error *ngIf="AllControls?.['Name']?.errors?.['required']&&submitted">Name is Rquired</mat-error>
+            
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput placeholder="Placeholder"  type="number" formControlName="Age">
+            <mat-error *ngIf="AllControls?.['Age']?.errors?.['required']&&submitted">Age is Rquired</mat-error>
+            
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline">
+                <mat-label>Address</mat-label>
+                <textarea matInput  formControlName="Address"></textarea>
+                <mat-error *ngIf="AllControls?.['Address']?.errors?.['required']&&submitted">Address is Rquired</mat-error>
+              </mat-form-field>
+       
+        <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Placeholder"  formControlName="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+        <mat-error *ngIf="AllControls?.['Email']?.errors?.['required']&&submitted">Email is Rquired</mat-error>
+        <mat-error *ngIf="AllControls?.['Email']?.errors?.['email']&&submitted">Invalide Email</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+        <mat-label>Mobile</mat-label>
+        <input matInput placeholder="Placeholder"  type="number" formControlName="phoneNumber">
+        <mat-error *ngIf="AllControls?.['phoneNumber']?.errors?.['required']&&submitted">Mobile is Rquired</mat-error>
+        <mat-error *ngIf="AllControls?.['phoneNumber']?.errors?.['pattern']&&submitted">Invalide Mobile Number</mat-error>
+        </mat-form-field>
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary">Create</button>
+           </div>
+    </form>
+</mat-card>
+</div>

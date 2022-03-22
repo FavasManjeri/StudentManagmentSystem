@@ -1,0 +1,19 @@
+.tabClass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     align-items: center;
+     top: 6rem;
+     position: relative;
+}
+.loginCard{
+   border: 1px solid skyblue;
+}
+
+mat-form-field{
+    width: 100% !important;
+}
+.signup{
+    margin-top: -35px;
+    margin-left: 90px;
+}
